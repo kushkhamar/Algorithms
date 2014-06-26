@@ -5,9 +5,15 @@ import (
 	"sort"
 )
 
-type Number struct {
-	Num  int
-}
+type Interface interface {
+    		// Len is the number of elements in the collection.
+    		Len() int
+    		// Less reports whether the element with
+    		// index i should sort before the element with index j.
+    		Less(i, j int) bool
+    		// Swap swaps the elements with indexes i and j.
+    		Swap(i, j int)
+}    	
 
 // maintain max-heap property from index
 func siftDown(data [][]byte, lo, hi, first int) {
@@ -64,12 +70,22 @@ func HeapSort(data [][]byte, a, b int) {
     siftDown(data, lo, i, first)
   }
 }
+func Sort(data Interface) {
+   		// Switch to heapsort if depth of 2*ceil(lg(n+1)) is reached.
+   		n := data.Len()
+   		maxDepth := 0
+   		for i := n; i > 0; i >>= 1 {
+   			maxDepth++
+   		}
+   		maxDepth *= 2
+   		quickSort(data, 0, n, maxDepth)
+   	}
 
 func main{
-	array := []Number{{31},{42},{17},{26}}
-	
-	fmt.Println(array)
-	sort.Sort(HeapSort(array))
-	fmt.Println(array)
-	
+	 var arr := [}int{31,42,17,26}
+
+	fmt.Println(arr)
+	sort.Sort(arr)
+	fmt.Println(arr)
+
 }
