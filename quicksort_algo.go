@@ -18,7 +18,7 @@ func medianOfThree(data Interface, a, b, c int) {
     96	func swapRange(data Interface, a, b, n int) {
     97		for i := 0; i < n; i++ {
     98			data.Swap(a+i, b+i)
-    99		}
+    99		} 
    100	}
    101	
    102	func doPivot(data Interface, lo, hi int) (midlo, midhi int) {
