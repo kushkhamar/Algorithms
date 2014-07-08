@@ -54,7 +54,7 @@ func swap(data [][]byte, a, b int) {
   temp := data[a]
   data[a] =  data[b]
   data[b] = temp
-}
+} 
 
 func HeapSort(data [][]byte, a, b int) {
   first := a
