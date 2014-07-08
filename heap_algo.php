@@ -15,7 +15,7 @@
    } else {
     $j = $t + 1;
    }
-  }
+  } 
   $array[$i] = $tmp_var;
  }
 
